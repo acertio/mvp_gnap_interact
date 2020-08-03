@@ -55,6 +55,10 @@ The client is accessible at <http://localhost:3000>
 
 The AS is accessible at : <http://localhost:8080/as>
 
-Acces Token allows you to get protected data. Use GET request with Authorization to see it. Or, 
+By default, a request to a protected endpoint will display "unauthorized" in your browser. 
 
-`curl -H "Authorization: Bearer <token to copy>" http://localhost:8080/as/data`
+Please copy the value of the Access Token to get access to the protected data (for demo purposes, we implemented a protected endpoint on the as). 
+Then use `curl -H "Authorization: Bearer <token to copy>" http://localhost:8080/as/data`
+and you'll get access to a JSON message {"message":"This is Protected Data"}. 
+
+
