@@ -51,13 +51,24 @@ Then start with the Interact_Server:
 
 `npm start`
 
-The client is accessible at <http://localhost:3000>
+The client is accessible at <http://localhost:3000> 
 
 The AS is accessible at : <http://localhost:8080/as>
+
+
+## Using
+
+Click on "New Transaction" to start the authorization flow. 
+
+The user either needs to register (we don't need a real email, put anything there) or may login if it already has an account.
+Then the user gets prompted for consent.
+
+After the consent has been given, an Access Token is generated (here a basic JWT).
 
 By default, a request to a protected endpoint will display "unauthorized" in your browser. 
 
 Please copy the value of the Access Token to get access to the protected data (for demo purposes, we implemented a protected endpoint on the as). 
+
 Then use `curl -H "Authorization: Bearer <token to copy>" http://localhost:8080/as/data`
 and you'll get access to a JSON message {"message":"This is Protected Data"}. 
 
