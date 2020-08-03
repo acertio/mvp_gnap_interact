@@ -10,11 +10,13 @@ The benefits of this approach are:
 - on the interaction side, the focus on the UX for login (or similar) and consent. The client may even provide its own interaction server in the request, so that the AS never needs to know which information is requested (good for privacy). The interaction server would typically be focused on the frontend components that end-users would see. 
 - on the authorization server side, we focus only on HTTP flows and cryptographic modules. Currently we do this in javascript but our aim is to support more secure and optimized implementations, without the need to also support frontend development. 
 
-Interestingly, the core XYZ between the Client and the AS isn't modified. The request/response mecanism between them has not changed.
+Interestingly, the core XYZ between the Client and the AS isn't modified. The request/response mecanism between them has not changed, so the actual implementation is transparent to the Client (except from the domain used).
 
 Changes compared to the core XYZ proposal:
 - the interact uri is now pointing to the interact server, instead of being part of the AS.
-- the nonce_server has become a hash of nonces from the AS and the interact. 
+- the callback_server_nonce has become a hash of nonces from the AS and the interact (as we now have 2 servers). 
+
+See more details in [redirect.md](https://github.com/acertio/mvp_gnap_interact/blob/master/Redirect.md#process)
 
 ## Status
 
